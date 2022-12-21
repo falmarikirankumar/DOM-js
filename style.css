@@ -1,0 +1,20 @@
+/* h1 {
+  color: red;
+} */
+.box {
+  width: auto;
+  height: auto;
+  border: 1px solid black;
+  margin: 5px;
+}
+pre {
+  font-size: 16px;
+}
+
+#box-con {
+  display: flex;
+}
+
+#box-con1 {
+  display: flex;
+}

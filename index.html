@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 align="center">
+      JavaScript Questions
+      <br />
+      DOM
+    </h1>
+    <div class="box">
+      <h2>Q1. Write the code to access element which is having id as "text"</h2>
+      <pre>
+        <p id="text">Hello world</p>console.log(document.getElementById("text"));
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>Q2. Write the code to access element which is having tag as "h1"</h2>
+      <pre><h1 id="hello">Hello World</h1>console.log(document.getElementsByTagName("h2"));
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>
+        Q3. Write the code to access element which is having class as "box"
+      </h2>
+      <pre><div class="box">Box</div>console.log(document.getElementsByClassName("box"));
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2 style="display: inline-block">
+        Q4.
+        <h1 style="display: inline-block">&nbsp; Hello</h1>
+        Change the heading from ""Hello"" to ""Hello World"" using DOM functions
+      </h2>
+      <pre><h1 id="heading" style="display: inline-block;">Hello</h1>
+document.querySelector("#heading").textContent = "Hello World";
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>
+        Q5. Create three cards on HTML page and arrange them using flex property
+        in row or horizontal direction and also create button at the bottom
+        named "Change Flex direction". When user clicks on this button, the
+        cards arrangement should be changed to vertical direction.
+      </h2>
+      <pre><div id="box-con">
+      <div class="box" style="width: 100px; height: 100px"></div>
+      <div class="box" style="width: 100px; height: 100px"></div>
+      <div class="box" style="width: 100px; height: 100px"></div>
+    </div>
+    <button id="btn" onclick="onClickbtn()">Change Flex direction</button>
+
+  function onClickbtn() {
+  let flex = document.querySelector("#box-con");
+  if (flex.style.display == "flex") {
+    flex.style.display = "block";
+  } else {
+    flex.style.display = "flex";
+  }
+}
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>Q6. What’s the difference between window vs document?</h2>
+      <pre>
+<h3 style="display: inline;">document</h3>
+ The document object represent a web page that is loaded in the browser. By accessing the document object, we can access the element in the HTML page.
+<h3 style="display: inline">window</h3>
+ The window object is the topmost object of the DOM hierarchy. It represents a browser window or frame that displays the contents of the webpage. Whenever a window appears on the screen to display the contents of the document, the window object is created.
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2 style="display: inline-block">
+        Q7.
+        <h1 style="display: inline-block">Hello</h1>
+
+        Add one style attribute and give text color as red and id attribute and
+        give the id value as ""heading"" in the above given h1 tag using DOM
+        functions
+      </h2>
+      <pre>
+            <h1 id="heading2">Hello</h1>
+    <button id="btn2">Click Me</button>
+
+btn2 = document.getElementById("btn2");
+btn2.addEventListener("click", () => {
+  text = document.querySelector("#heading2");
+  text.textContent = "heading";
+  text.style.color = "red";
+});
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>
+        Q8. Create an HTML page having content as Hello world and a button named
+        Replace Text. When user will click on this button page content should be
+        changed to "Welcome to Elevation academy"
+      </h2>
+      <pre>
+        <p id="textch">Hello world</p>
+<button id="btn3">Click Me</button>
+btn3 = document.getElementById("btn3");
+btn3.addEventListener("click", () => {
+  text = document.querySelector("#textch");
+  text.textContent = "Welcome to Elevation academy";
+});
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>
+        Q9. Write code to implement timer clock using JS -- display HH:MM:SS --
+        the time should keep updating every second
+      </h2>
+      <pre><div id="box-con1">
+      <div class="box1" id="hr" style="width: 50px; height: 50px"></div>
+      <div class="box1" id="mi" style="width: 50px; height: 50px"></div>
+      <div class="box1" id="sec" style="width: 50px; height: 50px"></div>
+    </div>
+  setInterval(
+  (Time = () => {
+    let dt = new Date();
+    let hr = dt.getHours();
+    let mi = dt.getMinutes();
+    let sec = dt.getSeconds();
+    console.log(hr, mi, sec);
+  }),
+  1000
+);
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>
+        Q10. Create a select drop down for selecting Year 20-21, 21-22 etc.
+        Print the item text selected
+      </h2>
+      <pre><form>
+      <label for="year"><b>Select Year:</b></label>
+      <select id="year">
+        <option value="select year">select year</option>
+        <option value="2020-2021">2020-2021</option>
+        <option value="2021-2022">2021-2022</option>
+        <option value="2022-2023">2022-2023</option>
+        <option value="2023-2024">2023-2024</option>
+      </select>
+      <p style="display: inline-block">year: <span id="choice"> </span></p>
+    </form>
+      </pre>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
